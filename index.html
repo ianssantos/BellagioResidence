@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bellagio Residence - Conforto e Elegância</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e configurações gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2d5aa0;
+            --accent-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #c19b2a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Banner */
+        .banner {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Pht01.png') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .banner-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .banner h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .banner-logo {
+            margin-bottom: 30px;
+        }
+
+        .banner-logo img {
+            max-width: 300px;
+            filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+        }
+
+        /* Plantas Baixas */
+        .plantas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .planta-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .planta-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .planta-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .planta-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .planta-card:hover .planta-img img {
+            transform: scale(1.05);
+        }
+
+        .planta-info {
+            padding: 20px;
+        }
+
+        .planta-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .planta-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .planta-tab {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .planta-tab:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Galeria */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Segunda Via */
+        .segunda-via {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .segunda-via .section-title {
+            color: white;
+        }
+
+        .segunda-via .section-title:after {
+            background-color: var(--accent-color);
+        }
+
+        .segunda-via-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .segunda-via-logo {
+            margin-bottom: 30px;
+        }
+
+        .segunda-via-logo img {
+            max-width: 200px;
+        }
+
+        .segunda-via-info {
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* Contato */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .banner h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .banner h1 {
+                font-size: 2rem;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .banner-logo img {
+                max-width: 200px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/LogoTranspBellagio.png" alt="Bellagio Residence">
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#plantas">Plantas Baixas</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#segunda-via">Segunda Via</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner" id="home">
+        <div class="banner-content">
+            <div class="banner-logo">
+                <img src="images/LogoTranspBellagio.png" alt="Bellagio Residence">
+            </div>
+            <h1>Bellagio Residence</h1>
+            <p>Conforto, elegância e sofisticação no coração da cidade</p>
+            <a href="#plantas" class="btn">Conheça nossos apartamentos</a>
+        </div>
+    </section>
+
+    <!-- Plantas Baixas -->
+    <section id="plantas">
+        <div class="container">
+            <h2 class="section-title">Plantas Baixas</h2>
+            <div class="plantas-container">
+                <!-- Apartamento Tipo A -->
+                <div class="planta-card">
+                    <div class="planta-img">
+                        <img src="https://via.placeholder.com/600x400/1a365d/ffffff?text=Planta+Apartamento+Tipo+A" alt="Apartamento Tipo A">
+                    </div>
+                    <div class="planta-info">
+                        <h3>Apartamento Tipo A</h3>
+                        <p>2 quartos, sendo 1 suíte, sala ampla, cozinha, área de serviço e 2 vagas de garagem.</p>
+                        <div class="planta-tabs">
+                            <div class="planta-tab" data-tab="eletrica">Elétrica</div>
+                            <div class="planta-tab" data-tab="hidraulica">Hidráulica</div>
+                            <div class="planta-tab" data-tab="ar-condicionado">Ar Condicionado</div>
+                            <div class="planta-tab" data-tab="outras">Outras</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apartamento Tipo B -->
+                <div class="planta-card">
+                    <div class="planta-img">
+                        <img src="https://via.placeholder.com/600x400/2d5aa0/ffffff?text=Planta+Apartamento+Tipo+B" alt="Apartamento Tipo B">
+                    </div>
+                    <div class="planta-info">
+                        <h3>Apartamento Tipo B</h3>
+                        <p>3 quartos, sendo 2 suítes, sala ampla, cozinha, área de serviço e 2 vagas de garagem.</p>
+                        <div class="planta-tabs">
+                            <div class="planta-tab" data-tab="eletrica">Elétrica</div>
+                            <div class="planta-tab" data-tab="hidraulica">Hidráulica</div>
+                            <div class="planta-tab" data-tab="ar-condicionado">Ar Condicionado</div>
+                            <div class="planta-tab" data-tab="outras">Outras</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria">
+        <div class="container">
+            <h2 class="section-title">Galeria do Condomínio</h2>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/1a365d/ffffff?text=Área+de+Lazer" alt="Área de Lazer">
+                    <div class="gallery-overlay">
+                        <h4>Área de Lazer</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/2d5aa0/ffffff?text=Piscina" alt="Piscina">
+                    <div class="gallery-overlay">
+                        <h4>Piscina</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/d4af37/333333?text=Salão+de+Festas" alt="Salão de Festas">
+                    <div class="gallery-overlay">
+                        <h4>Salão de Festas</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/1a365d/ffffff?text=Academia" alt="Academia">
+                    <div class="gallery-overlay">
+                        <h4>Academia</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/2d5aa0/ffffff?text=Hall+de+Entrada" alt="Hall de Entrada">
+                    <div class="gallery-overlay">
+                        <h4>Hall de Entrada</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/d4af37/333333?text=Garagem" alt="Garagem">
+                    <div class="gallery-overlay">
+                        <h4>Garagem</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segunda Via -->
+    <section class="segunda-via" id="segunda-via">
+        <div class="container">
+            <h2 class="section-title">Segunda Via de Contas</h2>
+            <div class="segunda-via-container">
+                <div class="segunda-via-logo">
+                    <img src="images/LogoMedintech.jpg" alt="Medintech">
+                </div>
+                <div class="segunda-via-info">
+                    <p>Para consultar e emitir a segunda via das contas de água e gás, clique no botão abaixo para acessar o sistema da Medintech.</p>
+                </div>
+                <a href="https://sga.bzs.com.br/segunda-via/consumidor?s=medintech" target="_blank" class="btn">Acessar Segunda Via</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua Exemplo, 123 - Bairro Exemplar<br>Cidade - Estado, CEP 12345-678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contato@bellagioresidence.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 9h às 13h</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form>
+                        <input type="text" placeholder="Seu nome" required>
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <input type="tel" placeholder="Seu telefone">
+                        <textarea placeholder="Sua mensagem" required></textarea>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="images/LogoTranspBellagio.png" alt="Bellagio Residence">
+                    <p>Conforto, elegância e sofisticação no coração da cidade.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#plantas">Plantas Baixas</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#segunda-via">Segunda Via</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Bairro Exemplar</p>
+                    <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> contato@bellagioresidence.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Bellagio Residence. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para imagens da galeria -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // Menu Mobile
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('nav ul');
+
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar em um link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Modal da galeria
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.close-modal');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                modalImage.src = imgSrc;
+                modal.style.display = 'flex';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Tabs das plantas baixas
+        const plantaTabs = document.querySelectorAll('.planta-tab');
+        
+        plantaTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabType = tab.getAttribute('data-tab');
+                alert(`Abrindo planta de ${tabType} para este apartamento.`);
+                // Aqui você implementaria a lógica para mostrar a planta específica
+            });
+        });
+
+        // Efeito de scroll suave para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
