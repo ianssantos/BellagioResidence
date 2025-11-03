@@ -15,14 +15,11 @@
         }
 
         :root {
-            --fundo-principal: #DDE1E2;
-            --secoes-destacadas: #CDB2A8;
-            --secoes-destacadas-alt: #AE9D98;
-            --titulos: #4D3026;
-            --texto-primario: #6C5B53;
-            --links-interativos: #96B0CD;
-            --botoes-destaque: #4D3026;
-            --texto-botoes: #DDE1E2;
+            --primary-color: #1a365d;
+            --secondary-color: #2d5aa0;
+            --accent-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
             --transition: all 0.3s ease;
         }
 
@@ -31,8 +28,8 @@
         }
 
         body {
-            background-color: var(--fundo-principal);
-            color: var(--texto-primario);
+            background-color: #f5f5f5;
+            color: var(--dark-color);
             line-height: 1.6;
         }
 
@@ -49,7 +46,7 @@
 
         h1, h2, h3, h4 {
             margin-bottom: 20px;
-            color: var(--titulos);
+            color: var(--primary-color);
         }
 
         p {
@@ -58,8 +55,8 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--botoes-destaque);
-            color: var(--texto-botoes);
+            background-color: var(--accent-color);
+            color: var(--primary-color);
             padding: 12px 25px;
             border: none;
             border-radius: 5px;
@@ -71,18 +68,18 @@
         }
 
         .btn:hover {
-            background-color: #3a241c;
+            background-color: #c19b2a;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .btn-secondary {
-            background-color: var(--links-interativos);
-            color: var(--texto-botoes);
+            background-color: var(--secondary-color);
+            color: white;
         }
 
         .btn-secondary:hover {
-            background-color: #7a9bc5;
+            background-color: #24508f;
         }
 
         .section-title {
@@ -96,7 +93,7 @@
             display: block;
             width: 80px;
             height: 3px;
-            background-color: var(--links-interativos);
+            background-color: var(--accent-color);
             margin: 15px auto;
         }
 
@@ -132,26 +129,25 @@
 
         nav ul li a {
             text-decoration: none;
-            color: var(--titulos);
+            color: var(--primary-color);
             font-weight: 600;
             transition: var(--transition);
         }
 
         nav ul li a:hover {
-            color: var(--links-interativos);
+            color: var(--accent-color);
         }
 
         .mobile-menu {
             display: none;
             font-size: 24px;
             cursor: pointer;
-            color: var(--titulos);
         }
 
         /* Banner */
         .banner {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/Pht01.png') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080/1a365d/ffffff?text=Bellagio+Residence') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -175,7 +171,6 @@
         .banner p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            color: white;
         }
 
         .banner-logo {
@@ -188,10 +183,6 @@
         }
 
         /* Plantas Baixas */
-        #plantas {
-            background-color: white;
-        }
-
         .plantas-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -204,7 +195,6 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
-            border: 1px solid var(--secoes-destacadas-alt);
         }
 
         .planta-card:hover {
@@ -233,7 +223,7 @@
         }
 
         .planta-info h3 {
-            color: var(--titulos);
+            color: var(--primary-color);
             margin-bottom: 10px;
         }
 
@@ -244,8 +234,7 @@
         }
 
         .planta-tab {
-            background-color: var(--fundo-principal);
-            color: var(--texto-primario);
+            background-color: #f0f0f0;
             padding: 5px 10px;
             margin-right: 10px;
             margin-bottom: 10px;
@@ -256,15 +245,11 @@
         }
 
         .planta-tab:hover {
-            background-color: var(--links-interativos);
+            background-color: var(--secondary-color);
             color: white;
         }
 
         /* Galeria */
-        #galeria {
-            background-color: var(--secoes-destacadas);
-        }
-
         .gallery-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -277,7 +262,6 @@
             border-radius: 10px;
             height: 250px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .gallery-item img {
@@ -309,16 +293,16 @@
 
         /* Segunda Via */
         .segunda-via {
-            background-color: var(--secoes-destacadas-alt);
-            color: var(--texto-primario);
+            background-color: var(--primary-color);
+            color: white;
         }
 
         .segunda-via .section-title {
-            color: var(--titulos);
+            color: white;
         }
 
         .segunda-via .section-title:after {
-            background-color: var(--links-interativos);
+            background-color: var(--accent-color);
         }
 
         .segunda-via-container {
@@ -342,10 +326,6 @@
         }
 
         /* Contato */
-        #contato {
-            background-color: white;
-        }
-
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -363,8 +343,8 @@
         }
 
         .contact-icon {
-            background-color: var(--links-interativos);
-            color: var(--texto-botoes);
+            background-color: var(--accent-color);
+            color: var(--primary-color);
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -380,10 +360,9 @@
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
-            border: 1px solid var(--secoes-destacadas-alt);
+            border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
-            background-color: var(--fundo-principal);
         }
 
         .contact-form textarea {
@@ -406,8 +385,8 @@
 
         /* Footer */
         footer {
-            background-color: var(--titulos);
-            color: var(--texto-botoes);
+            background-color: var(--primary-color);
+            color: white;
             padding: 50px 0 20px;
         }
 
@@ -426,7 +405,7 @@
         .footer-links h4,
         .footer-contact h4 {
             margin-bottom: 20px;
-            color: var(--links-interativos);
+            color: var(--accent-color);
         }
 
         .footer-links ul {
@@ -438,13 +417,13 @@
         }
 
         .footer-links ul li a {
-            color: var(--texto-botoes);
+            color: #ddd;
             text-decoration: none;
             transition: var(--transition);
         }
 
         .footer-links ul li a:hover {
-            color: var(--links-interativos);
+            color: var(--accent-color);
             padding-left: 5px;
         }
 
@@ -456,13 +435,13 @@
 
         .footer-contact i {
             margin-right: 10px;
-            color: var(--links-interativos);
+            color: var(--accent-color);
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
-            border-top: 1px solid rgba(221, 225, 226, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Modal */
@@ -511,8 +490,8 @@
         .toast {
             visibility: hidden;
             min-width: 250px;
-            background-color: var(--links-interativos);
-            color: var(--texto-botoes);
+            background-color: var(--accent-color);
+            color: var(--primary-color);
             text-align: center;
             border-radius: 5px;
             padding: 16px;
@@ -538,27 +517,6 @@
         @keyframes fadeout {
             from {bottom: 30px; opacity: 1;}
             to {bottom: 0; opacity: 0;}
-        }
-
-        /* Fallback para caso a imagem não carregue */
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--secoes-destacadas) 0%, var(--links-interativos) 100%);
-            z-index: -1;
-            display: none;
-        }
-
-        .banner.image-loaded::before {
-            display: none;
-        }
-
-        .banner.image-error::before {
-            display: block;
         }
 
         /* Responsividade */
@@ -667,7 +625,7 @@
                 <!-- Apartamento Tipo A -->
                 <div class="planta-card">
                     <div class="planta-img">
-                        <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Planta+Apartamento+Tipo+A" alt="Apartamento Tipo A">
+                        <img src="https://via.placeholder.com/600x400/1a365d/ffffff?text=Planta+Apartamento+Tipo+A" alt="Apartamento Tipo A">
                     </div>
                     <div class="planta-info">
                         <h3>Apartamento Tipo A</h3>
@@ -684,7 +642,7 @@
                 <!-- Apartamento Tipo B -->
                 <div class="planta-card">
                     <div class="planta-img">
-                        <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Planta+Apartamento+Tipo+B" alt="Apartamento Tipo B">
+                        <img src="https://via.placeholder.com/600x400/2d5aa0/ffffff?text=Planta+Apartamento+Tipo+B" alt="Apartamento Tipo B">
                     </div>
                     <div class="planta-info">
                         <h3>Apartamento Tipo B</h3>
@@ -707,37 +665,37 @@
             <h2 class="section-title">Galeria do Condomínio</h2>
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Área+de+Lazer" alt="Área de Lazer">
+                    <img src="https://via.placeholder.com/600x400/1a365d/ffffff?text=Área+de+Lazer" alt="Área de Lazer">
                     <div class="gallery-overlay">
                         <h4>Área de Lazer</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Piscina" alt="Piscina">
+                    <img src="https://via.placeholder.com/600x400/2d5aa0/ffffff?text=Piscina" alt="Piscina">
                     <div class="gallery-overlay">
                         <h4>Piscina</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Salão+de+Festas" alt="Salão de Festas">
+                    <img src="https://via.placeholder.com/600x400/d4af37/333333?text=Salão+de+Festas" alt="Salão de Festas">
                     <div class="gallery-overlay">
                         <h4>Salão de Festas</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Academia" alt="Academia">
+                    <img src="https://via.placeholder.com/600x400/1a365d/ffffff?text=Academia" alt="Academia">
                     <div class="gallery-overlay">
                         <h4>Academia</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Hall+de+Entrada" alt="Hall de Entrada">
+                    <img src="https://via.placeholder.com/600x400/2d5aa0/ffffff?text=Hall+de+Entrada" alt="Hall de Entrada">
                     <div class="gallery-overlay">
                         <h4>Hall de Entrada</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Garagem" alt="Garagem">
+                    <img src="https://via.placeholder.com/600x400/d4af37/333333?text=Garagem" alt="Garagem">
                     <div class="gallery-overlay">
                         <h4>Garagem</h4>
                     </div>
@@ -965,21 +923,6 @@
         // Adicionar evento aos botões de localização
         document.getElementById('locationBtn').addEventListener('click', enviarLocalizacao);
         document.getElementById('locationBtn2').addEventListener('click', enviarLocalizacao);
-
-        // Verificar se a imagem do banner carregou corretamente
-        const banner = document.querySelector('.banner');
-        const bannerImage = new Image();
-        bannerImage.src = 'images/Pht01.png';
-        
-        bannerImage.onload = function() {
-            banner.classList.add('image-loaded');
-            console.log('Imagem do banner carregada com sucesso!');
-        };
-        
-        bannerImage.onerror = function() {
-            banner.classList.add('image-error');
-            console.log('Erro ao carregar a imagem do banner. Verifique o caminho: images/Pht01.png');
-        };
     </script>
 </body>
 </html>
