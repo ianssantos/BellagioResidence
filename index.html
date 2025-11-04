@@ -151,7 +151,7 @@
         /* Banner */
         .banner {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/Pht01.png') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/Pht01.webp') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -375,20 +375,16 @@
             flex-shrink: 0;
         }
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid var(--secoes-destacadas-alt);
-            border-radius: 5px;
-            font-size: 1rem;
-            background-color: var(--fundo-principal);
+        /* Estilo para a seção do aplicativo */
+        .app-download {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
+        .app-download img {
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         /* Localização */
@@ -619,6 +615,15 @@
             .section-title {
                 font-size: 1.8rem;
             }
+            
+            .app-download {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .app-download img {
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -651,7 +656,7 @@
                 <img src="images/LogoTranspBellagio.png" alt="Bellagio Residence">
             </div>
             <h1>Bellagio Residence</h1>
-            <p>Conforto, elegância e sofisticação em Campina Grande</p>
+            <p>Site Não Oficial - Desenvolvido apenas para organização pessoal</p>
             <a href="#plantas" class="btn">Conheça nossos apartamentos</a>
             <button class="btn btn-secondary" id="locationBtn">
                 <i class="fas fa-map-marker-alt"></i> Enviar Localização
@@ -752,7 +757,7 @@
             <h2 class="section-title">Segunda Via de Contas</h2>
             <div class="segunda-via-container">
                 <div class="segunda-via-logo">
-                    <img src="images/LogoMedintech.jpg" alt="Medintech">
+                    <img src="images/LogoMedintech.png" alt="Medintech">
                 </div>
                 <div class="segunda-via-info">
                     <p>Para consultar e emitir a segunda via das contas de água e gás, clique no botão abaixo para acessar o sistema da Medintech.</p>
@@ -780,15 +785,6 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>(83) 3333-4444</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div>
@@ -796,13 +792,28 @@
                             <p>contato@bellagioresidence.com.br</p>
                         </div>
                     </div>
+                    
+                    <!-- App do Condomínio -->
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
                         <div>
-                            <h4>Horário de Atendimento</h4>
-                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 9h às 13h</p>
+                            <h4>App do Condomínio</h4>
+                            <p>Baixe o aplicativo Condomob para acompanhar as informações do condomínio</p>
+                            <div class="app-download" style="margin-top: 15px;">
+                                <a href="https://play.google.com/store/apps/details?id=agile.ti.mobile.condomob" target="_blank" style="display: inline-block; margin-right: 10px;">
+                                    <img src="images/LogoCondoMob.png" alt="Condomob App" style="height: 50px; border-radius: 8px;">
+                                </a>
+                                <div style="display: inline-block; vertical-align: top;">
+                                    <a href="https://play.google.com/store/apps/details?id=agile.ti.mobile.condomob" target="_blank" class="btn" style="margin: 2px 5px; padding: 8px 15px; font-size: 0.9rem;">
+                                        <i class="fab fa-android"></i> Android
+                                    </a>
+                                    <a href="https://apps.apple.com/br/app/condomob-condomínios/id1136370866" target="_blank" class="btn" style="margin: 2px 5px; padding: 8px 15px; font-size: 0.9rem;">
+                                        <i class="fab fa-apple"></i> iPhone
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -816,15 +827,18 @@
                         </button>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Envie uma Mensagem</h3>
-                    <form>
-                        <input type="text" placeholder="Seu nome" required>
-                        <input type="email" placeholder="Seu e-mail" required>
-                        <input type="tel" placeholder="Seu telefone">
-                        <textarea placeholder="Sua mensagem" required></textarea>
-                        <button type="submit" class="btn">Enviar Mensagem</button>
-                    </form>
+                <div class="contact-info">
+                    <h3>Lembrete</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div>
+                            <h4>Site Não Oficial</h4>
+                            <p>Este site foi desenvolvido apenas para organização pessoal e não possui vínculo oficial com a administração do condomínio.</p>
+                            <p style="margin-top: 10px;">Para assuntos oficiais, entre em contato diretamente com a administração através dos canais oficiais.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -836,7 +850,7 @@
             <div class="footer-container">
                 <div class="footer-logo">
                     <img src="images/LogoTranspBellagio.png" alt="Bellagio Residence">
-                    <p>Conforto, elegância e sofisticação em Campina Grande.</p>
+                    <p>Site Não Oficial - Desenvolvido apenas para organização pessoal</p>
                 </div>
                 <div class="footer-links">
                     <h4>Links Rápidos</h4>
@@ -969,7 +983,7 @@
         // Verificar se a imagem do banner carregou corretamente
         const banner = document.querySelector('.banner');
         const bannerImage = new Image();
-        bannerImage.src = 'images/Pht01.png';
+        bannerImage.src = 'images/Pht01.webp';
         
         bannerImage.onload = function() {
             banner.classList.add('image-loaded');
@@ -978,7 +992,7 @@
         
         bannerImage.onerror = function() {
             banner.classList.add('image-error');
-            console.log('Erro ao carregar a imagem do banner. Verifique o caminho: images/Pht01.png');
+            console.log('Erro ao carregar a imagem do banner. Verifique o caminho: images/Pht01.webp');
         };
     </script>
 </body>
