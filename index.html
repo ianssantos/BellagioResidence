@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bellagio Residence - Conforto e Elegância</title>
+    <title>Bellagio Residence - Organização e Plantas Baixas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset e configurações gerais */
@@ -83,6 +83,22 @@
         
         .btn-secondary:hover {
             background-color: #7a9bc5;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
+        .btn-uber {
+            background-color: #000000;
+        }
+        
+        .btn-uber:hover {
+            background-color: #333333;
         }
         
         .section-title {
@@ -446,6 +462,14 @@
             margin-bottom: 20px;
         }
         
+        .location-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--titulos);
@@ -551,6 +575,49 @@
             z-index: 1110;
         }
         
+        /* Modal para opções de localização */
+        .location-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .location-modal-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .location-modal h3 {
+            margin-bottom: 20px;
+            color: var(--titulos);
+        }
+        
+        .location-modal p {
+            margin-bottom: 25px;
+            color: var(--texto-primario);
+        }
+        
+        .location-modal-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
         /* Toast de confirmação */
         .toast {
             visibility: hidden;
@@ -649,6 +716,11 @@
             section {
                 padding: 60px 0;
             }
+            
+            .location-modal-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
         
         @media (max-width: 576px) {
@@ -684,6 +756,11 @@
             
             .plantas-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .location-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -957,6 +1034,25 @@
         </div>
     </div>
 
+    <!-- Modal para opções de localização -->
+    <div class="location-modal" id="locationModal">
+        <div class="location-modal-content">
+            <h3>Compartilhar Localização</h3>
+            <p>Escolha como deseja compartilhar a localização do Bellagio Residence:</p>
+            <div class="location-modal-buttons">
+                <button class="btn btn-whatsapp" id="whatsappBtn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+                <button class="btn btn-uber" id="uberBtn">
+                    <i class="fas fa-taxi"></i> Uber
+                </button>
+                <button class="btn btn-secondary" id="cancelLocationBtn">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast de confirmação -->
     <div id="toast" class="toast">Localização enviada com sucesso!</div>
 
@@ -1078,29 +1174,75 @@
             });
         });
         
-        // Função para enviar localização
-        function enviarLocalizacao() {
-            const endereco = "Rua Luzinalda Edite de Araújo Leite, 598 - Serrotão, Campina Grande - PB, 58434-323";
-            
-            // Simular envio da localização
-            console.log("Localização enviada:", endereco);
+        // Variáveis para localização
+        const locationModal = document.getElementById('locationModal');
+        const cancelLocationBtn = document.getElementById('cancelLocationBtn');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const uberBtn = document.getElementById('uberBtn');
+        
+        // Coordenadas GPS do Bellagio Residence
+        const bellagioLatitude = -7.2365; // 7°14'11.4"S convertido para decimal
+        const bellagioLongitude = -35.9321; // 35°55'55.6"W convertido para decimal
+        const endereco = "Rua Luzinalda Edite de Araújo Leite, 598 - Serrotão, Campina Grande - PB, 58434-323";
+        
+        // Função para abrir modal de localização
+        function abrirModalLocalizacao() {
+            locationModal.style.display = 'flex';
+        }
+        
+        // Função para fechar modal de localização
+        function fecharModalLocalizacao() {
+            locationModal.style.display = 'none';
+        }
+        
+        // Função para compartilhar localização no WhatsApp
+        function compartilharWhatsApp() {
+            const mensagem = `Localização do Bellagio Residence:\n\n${endereco}\n\nCoordenadas GPS: ${bellagioLatitude}, ${bellagioLongitude}\n\nGoogle Maps: https://www.google.com/maps/search/?api=1&query=${bellagioLatitude},${bellagioLongitude}`;
+            const urlWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagem)}`;
+            window.open(urlWhatsApp, '_blank');
+            fecharModalLocalizacao();
             
             // Mostrar toast de confirmação
             const toast = document.getElementById("toast");
+            toast.textContent = "Localização compartilhada no WhatsApp!";
             toast.className = "toast show";
             
-            // Esconder toast após 3 segundos
             setTimeout(function(){
                 toast.className = toast.className.replace("show", "");
             }, 3000);
+        }
+        
+        // Função para abrir localização no Uber
+        function abrirUber() {
+            const urlUber = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=${encodeURIComponent(endereco)}&dropoff[latitude]=${bellagioLatitude}&dropoff[longitude]=${bellagioLongitude}`;
+            window.open(urlUber, '_blank');
+            fecharModalLocalizacao();
             
-            // Opcional: Abrir no Google Maps
-            // window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(endereco)}`, '_blank');
+            // Mostrar toast de confirmação
+            const toast = document.getElementById("toast");
+            toast.textContent = "Localização aberta no Uber!";
+            toast.className = "toast show";
+            
+            setTimeout(function(){
+                toast.className = toast.className.replace("show", "");
+            }, 3000);
         }
         
         // Adicionar evento aos botões de localização
-        document.getElementById('locationBtn').addEventListener('click', enviarLocalizacao);
-        document.getElementById('locationBtn2').addEventListener('click', enviarLocalizacao);
+        document.getElementById('locationBtn').addEventListener('click', abrirModalLocalizacao);
+        document.getElementById('locationBtn2').addEventListener('click', abrirModalLocalizacao);
+        
+        // Adicionar eventos aos botões do modal
+        cancelLocationBtn.addEventListener('click', fecharModalLocalizacao);
+        whatsappBtn.addEventListener('click', compartilharWhatsApp);
+        uberBtn.addEventListener('click', abrirUber);
+        
+        // Fechar modal ao clicar fora
+        locationModal.addEventListener('click', (e) => {
+            if (e.target === locationModal) {
+                fecharModalLocalizacao();
+            }
+        });
         
         // Verificar se a imagem do banner carregou corretamente
         const banner = document.querySelector('.banner');
