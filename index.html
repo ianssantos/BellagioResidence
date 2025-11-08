@@ -13,7 +13,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         :root {
             --fundo-principal: #DDE1E2;
             --secoes-destacadas: #CDB2A8;
@@ -25,37 +25,37 @@
             --texto-botoes: #DDE1E2;
             --transition: all 0.3s ease;
         }
-
+        
         html {
             scroll-behavior: smooth;
         }
-
+        
         body {
             background-color: var(--fundo-principal);
             color: var(--texto-primario);
             line-height: 1.6;
         }
-
+        
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
+        
         section {
             padding: 80px 0;
         }
-
+        
         h1, h2, h3, h4 {
             margin-bottom: 20px;
             color: var(--titulos);
         }
-
+        
         p {
             margin-bottom: 15px;
         }
-
+        
         .btn {
             display: inline-block;
             background-color: var(--botoes-destaque);
@@ -69,28 +69,28 @@
             cursor: pointer;
             margin: 5px;
         }
-
+        
         .btn:hover {
             background-color: #3a241c;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
+        
         .btn-secondary {
             background-color: var(--links-interativos);
             color: var(--texto-botoes);
         }
-
+        
         .btn-secondary:hover {
             background-color: #7a9bc5;
         }
-
+        
         .section-title {
             text-align: center;
             margin-bottom: 50px;
             position: relative;
         }
-
+        
         .section-title:after {
             content: '';
             display: block;
@@ -99,7 +99,7 @@
             background-color: var(--links-interativos);
             margin: 15px auto;
         }
-
+        
         /* Header */
         header {
             background-color: white;
@@ -109,45 +109,45 @@
             top: 0;
             z-index: 1000;
         }
-
+        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
         }
-
+        
         .logo img {
             height: 50px;
         }
-
+        
         nav ul {
             display: flex;
             list-style: none;
         }
-
+        
         nav ul li {
             margin-left: 25px;
         }
-
+        
         nav ul li a {
             text-decoration: none;
             color: var(--titulos);
             font-weight: 600;
             transition: var(--transition);
         }
-
+        
         nav ul li a:hover {
             color: var(--links-interativos);
         }
-
+        
         .mobile-menu {
             display: none;
             font-size: 24px;
             cursor: pointer;
             color: var(--titulos);
         }
-
+        
         /* Banner */
         .banner {
             height: 100vh;
@@ -159,45 +159,45 @@
             color: white;
             margin-top: 80px;
         }
-
+        
         .banner-content {
             max-width: 800px;
             padding: 0 20px;
         }
-
+        
         .banner h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
-
+        
         .banner p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             color: white;
         }
-
+        
         .banner-logo {
             margin-bottom: 30px;
         }
-
+        
         .banner-logo img {
             max-width: 300px;
             filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 1));
         }
-
+        
         /* Plantas Baixas */
         #plantas {
             background-color: white;
         }
-
+        
         .plantas-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
-
+        
         .planta-card {
             background-color: white;
             border-radius: 10px;
@@ -206,71 +206,117 @@
             transition: var(--transition);
             border: 1px solid var(--secoes-destacadas-alt);
         }
-
+        
         .planta-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-
+        
         .planta-img {
-            height: 200px;
+            height: 220px;
             overflow: hidden;
+            cursor: pointer;
         }
-
+        
         .planta-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
-
+        
         .planta-card:hover .planta-img img {
             transform: scale(1.05);
         }
-
+        
         .planta-info {
             padding: 20px;
         }
-
+        
+        .planta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
         .planta-info h3 {
             color: var(--titulos);
-            margin-bottom: 10px;
+            margin-bottom: 0;
         }
-
+        
+        .planta-metragem {
+            background-color: var(--links-interativos);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
         .planta-tabs {
             display: flex;
             flex-wrap: wrap;
             margin-top: 15px;
+            position: relative;
         }
-
+        
         .planta-tab {
             background-color: var(--fundo-principal);
             color: var(--texto-primario);
-            padding: 5px 10px;
+            padding: 8px 15px;
             margin-right: 10px;
             margin-bottom: 10px;
-            border-radius: 20px;
+            border-radius: 5px;
             font-size: 0.9rem;
             cursor: pointer;
             transition: var(--transition);
         }
-
+        
         .planta-tab:hover {
             background-color: var(--links-interativos);
             color: white;
         }
-
+        
+        /* Menu de opções para planta baixa */
+        .planta-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 10;
+            top: 100%;
+            left: 0;
+            padding: 10px 0;
+            min-width: 180px;
+        }
+        
+        .planta-menu.show {
+            display: block;
+        }
+        
+        .planta-menu-item {
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .planta-menu-item:hover {
+            background-color: var(--fundo-principal);
+        }
+        
         /* Galeria */
         #galeria {
             background-color: var(--secoes-destacadas);
         }
-
+        
         .gallery-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 15px;
         }
-
+        
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -279,18 +325,18 @@
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
+        
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
-
+        
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-
+        
         .gallery-overlay {
             position: absolute;
             bottom: 0;
@@ -302,66 +348,66 @@
             transform: translateY(100%);
             transition: var(--transition);
         }
-
+        
         .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
         }
-
+        
         /* Segunda Via */
         .segunda-via {
             background-color: var(--secoes-destacadas-alt);
             color: var(--texto-primario);
         }
-
+        
         .segunda-via .section-title {
             color: var(--titulos);
         }
-
+        
         .segunda-via .section-title:after {
             background-color: var(--links-interativos);
         }
-
+        
         .segunda-via-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
-
+        
         .segunda-via-logo {
             margin-bottom: 30px;
         }
-
+        
         .segunda-via-logo img {
             max-width: 200px;
         }
-
+        
         .segunda-via-info {
             max-width: 600px;
             margin-bottom: 30px;
         }
-
+        
         /* Contato */
         #contato {
             background-color: white;
         }
-
+        
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
-
+        
         .contact-info h3 {
             margin-bottom: 20px;
         }
-
+        
         .contact-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 20px;
         }
-
+        
         .contact-icon {
             background-color: var(--links-interativos);
             color: var(--texto-botoes);
@@ -374,19 +420,19 @@
             margin-right: 15px;
             flex-shrink: 0;
         }
-
+        
         /* Estilo para a seção do aplicativo */
         .app-download {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
         }
-
+        
         .app-download img {
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-
+        
         /* Localização */
         .location-container {
             display: flex;
@@ -395,73 +441,72 @@
             text-align: center;
             margin-top: 30px;
         }
-
+        
         .location-info {
             margin-bottom: 20px;
         }
-
+        
         /* Footer */
         footer {
             background-color: var(--titulos);
             color: var(--texto-botoes);
             padding: 50px 0 20px;
         }
-
+        
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-
+        
         .footer-logo img {
             max-width: 200px;
             margin-bottom: 20px;
         }
-
-        .footer-links h4,
-        .footer-contact h4 {
+        
+        .footer-links h4, .footer-contact h4 {
             margin-bottom: 20px;
             color: var(--links-interativos);
         }
-
+        
         .footer-links ul {
             list-style: none;
         }
-
+        
         .footer-links ul li {
             margin-bottom: 10px;
         }
-
+        
         .footer-links ul li a {
             color: var(--texto-botoes);
             text-decoration: none;
             transition: var(--transition);
         }
-
+        
         .footer-links ul li a:hover {
             color: var(--links-interativos);
             padding-left: 5px;
         }
-
+        
         .footer-contact p {
             margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
-
+        
         .footer-contact i {
             margin-right: 10px;
             color: var(--links-interativos);
         }
-
+        
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(221, 225, 226, 0.1);
         }
-
-        /* Modal */
+        
+        /* Modal para imagens */
         .modal {
             display: none;
             position: fixed;
@@ -469,24 +514,26 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
             z-index: 1100;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
-
+        
         .modal-content {
             max-width: 90%;
             max-height: 90%;
             position: relative;
         }
-
+        
         .modal-content img {
             width: 100%;
             height: auto;
             border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
         }
-
+        
         .close-modal {
             position: absolute;
             top: 15px;
@@ -501,8 +548,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1110;
         }
-
+        
         /* Toast de confirmação */
         .toast {
             visibility: hidden;
@@ -520,22 +568,22 @@
             font-weight: 600;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-
+        
         .toast.show {
             visibility: visible;
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
-
+        
         @keyframes fadein {
             from {bottom: 0; opacity: 0;}
             to {bottom: 30px; opacity: 1;}
         }
-
+        
         @keyframes fadeout {
             from {bottom: 30px; opacity: 1;}
             to {bottom: 0; opacity: 0;}
         }
-
+        
         /* Fallback para caso a imagem não carregue */
         .banner::before {
             content: '';
@@ -548,27 +596,27 @@
             z-index: -1;
             display: none;
         }
-
+        
         .banner.image-loaded::before {
             display: none;
         }
-
+        
         .banner.image-error::before {
             display: block;
         }
-
+        
         /* Responsividade */
         @media (max-width: 992px) {
             .banner h1 {
                 font-size: 2.5rem;
             }
         }
-
+        
         @media (max-width: 768px) {
             .mobile-menu {
                 display: block;
             }
-
+            
             nav ul {
                 position: fixed;
                 top: 80px;
@@ -581,37 +629,37 @@
                 padding-top: 50px;
                 transition: var(--transition);
             }
-
+            
             nav ul.active {
                 left: 0;
             }
-
+            
             nav ul li {
                 margin: 15px 0;
             }
-
+            
             .banner h1 {
                 font-size: 2rem;
             }
-
+            
             .banner p {
                 font-size: 1rem;
             }
-
+            
             section {
                 padding: 60px 0;
             }
         }
-
+        
         @media (max-width: 576px) {
             .banner h1 {
                 font-size: 1.8rem;
             }
-
+            
             .banner-logo img {
                 max-width: 200px;
             }
-
+            
             .section-title {
                 font-size: 1.8rem;
             }
@@ -623,6 +671,19 @@
             
             .app-download img {
                 margin-bottom: 10px;
+            }
+            
+            .planta-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .planta-metragem {
+                margin-top: 10px;
+            }
+            
+            .plantas-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -657,7 +718,6 @@
             </div>
             <h1>Bellagio Residence</h1>
             <p>Site Não Oficial - Desenvolvido apenas para organização pessoal</p>
-            <a href="#plantas" class="btn">Conheça nossos apartamentos</a>
             <button class="btn btn-secondary" id="locationBtn">
                 <i class="fas fa-map-marker-alt"></i> Enviar Localização
             </button>
@@ -671,34 +731,58 @@
             <div class="plantas-container">
                 <!-- Apartamento Tipo A -->
                 <div class="planta-card">
-                    <div class="planta-img">
-                        <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Planta+Apartamento+Tipo+A" alt="Apartamento Tipo A">
+                    <div class="planta-img" data-image="images/AptoTipoA.webp">
+                        <img src="images/AptoTipoA.webp" alt="Apartamento Tipo A">
                     </div>
                     <div class="planta-info">
-                        <h3>Apartamento Tipo A</h3>
-                        <p>2 quartos, sendo 1 suíte, sala ampla, cozinha, área de serviço e 2 vagas de garagem.</p>
+                        <div class="planta-header">
+                            <h3>Apartamento Tipo A</h3>
+                            <div class="planta-metragem">64,60 m²</div>
+                        </div>
                         <div class="planta-tabs">
                             <div class="planta-tab" data-tab="eletrica">Elétrica</div>
                             <div class="planta-tab" data-tab="hidraulica">Hidráulica</div>
                             <div class="planta-tab" data-tab="ar-condicionado">Ar Condicionado</div>
-                            <div class="planta-tab" data-tab="outras">Outras</div>
+                            <div class="planta-tab planta-baixa-btn" data-tipo="tipoA">Planta Baixa</div>
+                            <div class="planta-menu" id="planta-menu-tipoA">
+                                <div class="planta-menu-item" data-pdf="AptoFinal01.pdf">Apto Final 01</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal02.pdf">Apto Final 02</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal03.pdf">Apto Final 03</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal04.pdf">Apto Final 04</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal05.pdf">Apto Final 05</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal06.pdf">Apto Final 06</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal07.pdf">Apto Final 07</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal08.pdf">Apto Final 08</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Apartamento Tipo B -->
                 <div class="planta-card">
-                    <div class="planta-img">
-                        <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Planta+Apartamento+Tipo+B" alt="Apartamento Tipo B">
+                    <div class="planta-img" data-image="images/AptoTipoB.webp">
+                        <img src="images/AptoTipoB.webp" alt="Apartamento Tipo B">
                     </div>
                     <div class="planta-info">
-                        <h3>Apartamento Tipo B</h3>
-                        <p>3 quartos, sendo 2 suítes, sala ampla, cozinha, área de serviço e 2 vagas de garagem.</p>
+                        <div class="planta-header">
+                            <h3>Apartamento Tipo B</h3>
+                            <div class="planta-metragem">51,08 m²</div>
+                        </div>
                         <div class="planta-tabs">
                             <div class="planta-tab" data-tab="eletrica">Elétrica</div>
                             <div class="planta-tab" data-tab="hidraulica">Hidráulica</div>
                             <div class="planta-tab" data-tab="ar-condicionado">Ar Condicionado</div>
-                            <div class="planta-tab" data-tab="outras">Outras</div>
+                            <div class="planta-tab planta-baixa-btn" data-tipo="tipoB">Planta Baixa</div>
+                            <div class="planta-menu" id="planta-menu-tipoB">
+                                <div class="planta-menu-item" data-pdf="AptoFinal01.pdf">Apto Final 01</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal02.pdf">Apto Final 02</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal03.pdf">Apto Final 03</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal04.pdf">Apto Final 04</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal05.pdf">Apto Final 05</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal06.pdf">Apto Final 06</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal07.pdf">Apto Final 07</div>
+                                <div class="planta-menu-item" data-pdf="AptoFinal08.pdf">Apto Final 08</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -712,37 +796,37 @@
             <h2 class="section-title">Galeria do Condomínio</h2>
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Área+de+Lazer" alt="Área de Lazer">
+                    <img src="images/AreadeLazer.webp" alt="Área de Lazer">
                     <div class="gallery-overlay">
                         <h4>Área de Lazer</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Piscina" alt="Piscina">
+                    <img src="images/Piscina.webp" alt="Piscina">
                     <div class="gallery-overlay">
                         <h4>Piscina</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Salão+de+Festas" alt="Salão de Festas">
+                    <img src="images/SalaodeFestas.webp" alt="Salão de Festas">
                     <div class="gallery-overlay">
                         <h4>Salão de Festas</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Academia" alt="Academia">
+                    <img src="images/Academia.webp" alt="Academia">
                     <div class="gallery-overlay">
                         <h4>Academia</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Hall+de+Entrada" alt="Hall de Entrada">
+                    <img src="images/HalldeEntrada.webp" alt="Hall de Entrada">
                     <div class="gallery-overlay">
                         <h4>Hall de Entrada</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Garagem" alt="Garagem">
+                    <img src="images/Garagem.webp" alt="Garagem">
                     <div class="gallery-overlay">
                         <h4>Garagem</h4>
                     </div>
@@ -783,15 +867,6 @@
                             <p>Rua Luzinalda Edite de Araújo Leite, 598 - Serrotão<br>Campina Grande - PB, 58434-323</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>E-mail</h4>
-                            <p>contato@bellagioresidence.com.br</p>
-                        </div>
-                    </div>
                     
                     <!-- App do Condomínio -->
                     <div class="contact-item">
@@ -827,6 +902,7 @@
                         </button>
                     </div>
                 </div>
+                
                 <div class="contact-info">
                     <h3>Lembrete</h3>
                     <div class="contact-item">
@@ -865,8 +941,6 @@
                 <div class="footer-contact">
                     <h4>Contato</h4>
                     <p><i class="fas fa-map-marker-alt"></i> Rua Luzinalda Edite de Araújo Leite, 598 - Serrotão</p>
-                    <p><i class="fas fa-phone"></i> (83) 3333-4444</p>
-                    <p><i class="fas fa-envelope"></i> contato@bellagioresidence.com.br</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -875,7 +949,7 @@
         </div>
     </footer>
 
-    <!-- Modal para imagens da galeria -->
+    <!-- Modal para imagens -->
     <div class="modal" id="imageModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -890,11 +964,10 @@
         // Menu Mobile
         const mobileMenu = document.querySelector('.mobile-menu');
         const navMenu = document.querySelector('nav ul');
-
         mobileMenu.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
-
+        
         // Fechar menu ao clicar em um link
         const navLinks = document.querySelectorAll('nav ul li a');
         navLinks.forEach(link => {
@@ -902,13 +975,13 @@
                 navMenu.classList.remove('active');
             });
         });
-
+        
         // Modal da galeria
         const galleryItems = document.querySelectorAll('.gallery-item');
         const modal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
         const closeModal = document.querySelector('.close-modal');
-
+        
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 const imgSrc = item.querySelector('img').src;
@@ -916,20 +989,29 @@
                 modal.style.display = 'flex';
             });
         });
-
+        
+        // Modal para imagens das plantas
+        const plantaImages = document.querySelectorAll('.planta-img');
+        plantaImages.forEach(img => {
+            img.addEventListener('click', () => {
+                const imgSrc = img.getAttribute('data-image');
+                modalImage.src = imgSrc;
+                modal.style.display = 'flex';
+            });
+        });
+        
         closeModal.addEventListener('click', () => {
             modal.style.display = 'none';
         });
-
+        
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.style.display = 'none';
             }
         });
-
-        // Tabs das plantas baixas
-        const plantaTabs = document.querySelectorAll('.planta-tab');
         
+        // Tabs das plantas baixas - exceto Planta Baixa
+        const plantaTabs = document.querySelectorAll('.planta-tab:not(.planta-baixa-btn)');
         plantaTabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 const tabType = tab.getAttribute('data-tab');
@@ -937,15 +1019,55 @@
                 // Aqui você implementaria a lógica para mostrar a planta específica
             });
         });
-
+        
+        // Menu de opções para Planta Baixa
+        const plantaBaixaBtns = document.querySelectorAll('.planta-baixa-btn');
+        const plantaMenus = document.querySelectorAll('.planta-menu');
+        
+        plantaBaixaBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const tipo = btn.getAttribute('data-tipo');
+                const menu = document.getElementById(`planta-menu-${tipo}`);
+                
+                // Fechar todos os menus primeiro
+                plantaMenus.forEach(m => m.classList.remove('show'));
+                
+                // Abrir o menu correspondente
+                menu.classList.add('show');
+            });
+        });
+        
+        // Fechar menus ao clicar fora
+        document.addEventListener('click', () => {
+            plantaMenus.forEach(menu => menu.classList.remove('show'));
+        });
+        
+        // Impedir que o clique no menu feche o menu
+        plantaMenus.forEach(menu => {
+            menu.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+        
+        // Download de PDFs
+        const plantaMenuItems = document.querySelectorAll('.planta-menu-item');
+        plantaMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const pdfFile = item.getAttribute('data-pdf');
+                // Simular download do PDF
+                alert(`Baixando arquivo: ${pdfFile}`);
+                // Aqui você implementaria o download real do PDF
+                // window.open(pdfFile, '_blank');
+            });
+        });
+        
         // Efeito de scroll suave para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -955,7 +1077,7 @@
                 }
             });
         });
-
+        
         // Função para enviar localização
         function enviarLocalizacao() {
             const endereco = "Rua Luzinalda Edite de Araújo Leite, 598 - Serrotão, Campina Grande - PB, 58434-323";
@@ -968,32 +1090,41 @@
             toast.className = "toast show";
             
             // Esconder toast após 3 segundos
-            setTimeout(function(){ 
-                toast.className = toast.className.replace("show", ""); 
+            setTimeout(function(){
+                toast.className = toast.className.replace("show", "");
             }, 3000);
             
             // Opcional: Abrir no Google Maps
             // window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(endereco)}`, '_blank');
         }
-
+        
         // Adicionar evento aos botões de localização
         document.getElementById('locationBtn').addEventListener('click', enviarLocalizacao);
         document.getElementById('locationBtn2').addEventListener('click', enviarLocalizacao);
-
+        
         // Verificar se a imagem do banner carregou corretamente
         const banner = document.querySelector('.banner');
         const bannerImage = new Image();
         bannerImage.src = 'images/Pht01.webp';
-        
         bannerImage.onload = function() {
             banner.classList.add('image-loaded');
             console.log('Imagem do banner carregada com sucesso!');
         };
-        
         bannerImage.onerror = function() {
             banner.classList.add('image-error');
             console.log('Erro ao carregar a imagem do banner. Verifique o caminho: images/Pht01.webp');
         };
+        
+        // Verificar se as imagens das plantas carregaram corretamente
+        const plantaImgs = document.querySelectorAll('.planta-img img');
+        plantaImgs.forEach((img, index) => {
+            const plantaImage = new Image();
+            plantaImage.src = img.src;
+            plantaImage.onerror = function() {
+                console.log(`Erro ao carregar a imagem da planta ${index + 1}. Verifique o caminho: ${img.src}`);
+                img.src = 'https://via.placeholder.com/600x400/6C5B53/DDE1E2?text=Imagem+Não+Encontrada';
+            };
+        });
     </script>
 </body>
 </html>
