@@ -334,6 +334,67 @@
             transform: translateY(-2px);
         }
         
+        /* Seção Manuais */
+        #manuais {
+            background-color: var(--secoes-destacadas-alt);
+        }
+        
+        .manuais-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .manual-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border: 1px solid var(--secoes-destacadas);
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .manual-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .manual-icon {
+            font-size: 3rem;
+            color: var(--links-interativos);
+            margin-bottom: 20px;
+        }
+        
+        .manual-card h3 {
+            color: var(--titulos);
+            margin-bottom: 15px;
+        }
+        
+        .manual-card p {
+            color: var(--texto-primario);
+            margin-bottom: 20px;
+        }
+        
+        .manual-btn {
+            background-color: var(--botoes-destaque);
+            color: var(--texto-botoes);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .manual-btn:hover {
+            background-color: #3a241c;
+            transform: translateY(-3px);
+        }
+        
         /* GALERIA CORRIGIDA */
         #galeria {
             background-color: var(--secoes-destacadas);
@@ -793,6 +854,11 @@
             .gallery-title {
                 font-size: 1.1rem;
             }
+            
+            /* Manuais Mobile */
+            .manuais-container {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 576px) {
@@ -873,6 +939,7 @@
                 <ul>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#plantas">Plantas Baixas</a></li>
+                    <li><a href="#manuais">Manuais</a></li>
                     <li><a href="#galeria">Galeria</a></li>
                     <li><a href="#segunda-via">Segunda Via</a></li>
                     <li><a href="#contato">Contato</a></li>
@@ -918,14 +985,14 @@
                         <div class="planta-baixa-section">
                             <div class="planta-baixa-title">Planta Baixa por Apartamento</div>
                             <div class="planta-baixa-buttons">
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal01.pdf">Apto Final 01</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal02.pdf">Apto Final 02</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal03.pdf">Apto Final 03</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal04.pdf">Apto Final 04</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal05.pdf">Apto Final 05</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal06.pdf">Apto Final 06</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal07.pdf">Apto Final 07</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal08.pdf">Apto Final 08</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal01.pdf">Apto Final 01</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal02.pdf">Apto Final 02</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal03.pdf">Apto Final 03</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal04.pdf">Apto Final 04</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal05.pdf">Apto Final 05</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal06.pdf">Apto Final 06</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal07.pdf">Apto Final 07</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal08.pdf">Apto Final 08</button>
                             </div>
                         </div>
                     </div>
@@ -949,17 +1016,47 @@
                         <div class="planta-baixa-section">
                             <div class="planta-baixa-title">Planta Baixa por Apartamento</div>
                             <div class="planta-baixa-buttons">
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal01.pdf">Apto Final 01</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal02.pdf">Apto Final 02</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal03.pdf">Apto Final 03</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal04.pdf">Apto Final 04</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal05.pdf">Apto Final 05</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal06.pdf">Apto Final 06</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal07.pdf">Apto Final 07</button>
-                                <button class="planta-baixa-btn" data-pdf="AptoFinal08.pdf">Apto Final 08</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal01.pdf">Apto Final 01</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal02.pdf">Apto Final 02</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal03.pdf">Apto Final 03</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal04.pdf">Apto Final 04</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal05.pdf">Apto Final 05</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal06.pdf">Apto Final 06</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal07.pdf">Apto Final 07</button>
+                                <button class="planta-baixa-btn" data-pdf="downloads/AptoFinal08.pdf">Apto Final 08</button>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Manuais -->
+    <section id="manuais">
+        <div class="container">
+            <h2 class="section-title">Manuais do Condomínio</h2>
+            <div class="manuais-container">
+                <div class="manual-card">
+                    <div class="manual-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Manual do Proprietário</h3>
+                    <p>Guia completo com informações importantes para proprietários e moradores do Bellagio Residence.</p>
+                    <button class="manual-btn" data-pdf="downloads/ManualProprietarioBellagioResidence.pdf">
+                        <i class="fas fa-download"></i> Baixar Manual
+                    </button>
+                </div>
+                
+                <div class="manual-card">
+                    <div class="manual-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Manual de Manutenção</h3>
+                    <p>Orientações sobre manutenção preventiva e corretiva das instalações do apartamento.</p>
+                    <button class="manual-btn" data-pdf="downloads/ManualManutencaoBellagio.pdf">
+                        <i class="fas fa-download"></i> Baixar Manual
+                    </button>
                 </div>
             </div>
         </div>
@@ -1120,6 +1217,7 @@
                     <ul>
                         <li><a href="#home">Início</a></li>
                         <li><a href="#plantas">Plantas Baixas</a></li>
+                        <li><a href="#manuais">Manuais</a></li>
                         <li><a href="#galeria">Galeria</a></li>
                         <li><a href="#segunda-via">Segunda Via</a></li>
                         <li><a href="#contato">Contato</a></li>
@@ -1232,15 +1330,42 @@
             });
         });
         
-        // Botões de download de PDFs
+        // Função para download de PDFs
+        function downloadPDF(pdfPath) {
+            // Verificar se o arquivo existe
+            fetch(pdfPath, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // Arquivo existe, fazer download
+                        window.open(pdfPath, '_blank');
+                        console.log(`Download iniciado: ${pdfPath}`);
+                    } else {
+                        // Arquivo não encontrado
+                        alert(`Arquivo não encontrado: ${pdfPath}`);
+                        console.error(`Arquivo não encontrado: ${pdfPath}`);
+                    }
+                })
+                .catch(error => {
+                    console.error(`Erro ao verificar arquivo: ${pdfPath}`, error);
+                    alert(`Erro ao baixar o arquivo. Verifique se o arquivo existe.`);
+                });
+        }
+        
+        // Botões de download de PDFs das plantas
         const plantaBaixaBtns = document.querySelectorAll('.planta-baixa-btn');
         plantaBaixaBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const pdfFile = btn.getAttribute('data-pdf');
-                // Simular download do PDF
-                alert(`Baixando arquivo: ${pdfFile}`);
-                // Aqui você implementaria o download real do PDF
-                // window.open(pdfFile, '_blank');
+                downloadPDF(pdfFile);
+            });
+        });
+        
+        // Botões de download dos manuais
+        const manualBtns = document.querySelectorAll('.manual-btn');
+        manualBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const pdfFile = btn.getAttribute('data-pdf');
+                downloadPDF(pdfFile);
             });
         });
         

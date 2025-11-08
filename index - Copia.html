@@ -334,15 +334,15 @@
             transform: translateY(-2px);
         }
         
-        /* Galeria */
+        /* GALERIA CORRIGIDA */
         #galeria {
             background-color: var(--secoes-destacadas);
         }
         
         .gallery-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
         }
         
         .gallery-item {
@@ -352,6 +352,12 @@
             height: 250px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         
         .gallery-item img {
@@ -362,23 +368,31 @@
         }
         
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         
+        /* Overlay da galeria corrigido - SEMPRE VISÍVEL */
         .gallery-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+            padding: 25px 20px 15px;
             color: white;
-            transform: translateY(100%);
+            transform: translateY(0);
             transition: var(--transition);
         }
         
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
+        /* Título da galeria corrigido - SEMPRE VISÍVEL */
+        .gallery-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            transition: var(--transition);
+            opacity: 1;
         }
         
         /* Segunda Via */
@@ -761,6 +775,24 @@
                 right: 10px;
                 font-size: 0.8rem;
             }
+            
+            /* Galeria Mobile */
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+            }
+            
+            .gallery-item {
+                height: 220px;
+            }
+            
+            .gallery-overlay {
+                padding: 20px 15px 12px;
+            }
+            
+            .gallery-title {
+                font-size: 1.1rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -810,6 +842,19 @@
             .planta-baixa-btn {
                 padding: 6px 10px;
                 font-size: 0.8rem;
+            }
+            
+            /* Galeria Mobile Pequena */
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .gallery-title {
+                font-size: 1rem;
             }
         }
     </style>
@@ -920,7 +965,7 @@
         </div>
     </section>
 
-    <!-- Galeria -->
+    <!-- Galeria Corrigida -->
     <section id="galeria">
         <div class="container">
             <h2 class="section-title">Galeria do Condomínio</h2>
@@ -928,37 +973,49 @@
                 <div class="gallery-item">
                     <img src="images/AreadeLazer.webp" alt="Área de Lazer">
                     <div class="gallery-overlay">
-                        <h4>Área de Lazer</h4>
+                        <h4 class="gallery-title">Área de Lazer</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/Piscina.webp" alt="Piscina">
                     <div class="gallery-overlay">
-                        <h4>Piscina</h4>
+                        <h4 class="gallery-title">Piscina</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/SalaodeFestas.webp" alt="Salão de Festas">
                     <div class="gallery-overlay">
-                        <h4>Salão de Festas</h4>
+                        <h4 class="gallery-title">Salão de Festas</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/Academia.webp" alt="Academia">
                     <div class="gallery-overlay">
-                        <h4>Academia</h4>
+                        <h4 class="gallery-title">Academia</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/HalldeEntrada.webp" alt="Hall de Entrada">
                     <div class="gallery-overlay">
-                        <h4>Hall de Entrada</h4>
+                        <h4 class="gallery-title">Hall de Entrada</h4>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/Garagem.webp" alt="Garagem">
                     <div class="gallery-overlay">
-                        <h4>Garagem</h4>
+                        <h4 class="gallery-title">Garagem</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Detalhe1.webp" alt="Detalhe Arquitetônico">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Detalhe Arquitetônico</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Detalhe2.webp" alt="Detalhe de Acabamento">
+                    <div class="gallery-overlay">
+                        <h4 class="gallery-title">Detalhe de Acabamento</h4>
                     </div>
                 </div>
             </div>
